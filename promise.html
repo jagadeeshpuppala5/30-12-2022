@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		const one =()=>{
+			return "I am from the one function"
+		};
+
+		/*const two=()=>{
+			setTimeout(()=>{
+				return "I am from the two function"
+			},2000)
+		}*/
+
+		const two=()=>{
+			return new Promise((resolve,reject)=>{
+				setTimeout(()=>{
+					resolve("I am from the two function");
+				},4000)
+				console.log("Loading");
+			})
+		}
+
+
+		const three=()=>{
+			return "I am from the three function"
+		}
+
+		const callAll=()=>{
+			var first=one();
+			console.log(first);
+			var second=two();
+			console.log(second);
+			var third=three();
+			console.log(third);
+		}
+		callAll();
+	</script>
+</head>
+<body>
+	<p>we are seeing the promises concept</p>
+</body>
+</html>
